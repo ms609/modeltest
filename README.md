@@ -29,90 +29,92 @@ This step is not necessary if you downloaded the released tarball.
 
 0. Automatic Build
 
-  There are 2 ways of building ModelTest-NG:
-    - Using cmake
-    - Using autotools
+There are 2 ways of building ModelTest-NG:
+  - Using cmake
+  - Using autotools
 
-  Both should work, so choose the one is more comfortable for you. If you experience
-  any problem, please try the other one as well.
+Both should work, so choose the one is more comfortable for you. If you experience
+any problem, please try the other one as well.
 
-  a) Build ModelTest-NG using `cmake`:
+a) Build ModelTest-NG using `cmake`:
 
-    PTHREADS version:
+  PTHREADS version:
 
-    ```
-    cd modeltest-ng
-    mkdir build && cd build
-    cmake ..
-    make
-    ```
+  ```
+  cd modeltest-ng
+  mkdir build && cd build
+  cmake ..
+  make
+  ```
 
-    MPI version:
+  MPI version:
 
-    ```
-    cd modeltest-ng
-    mkdir build && cd build
-    cmake -DUSE_MPI=ON ..
-    make
-    ```
+  ```
+  cd modeltest-ng
+  mkdir build && cd build
+  cmake -DUSE_MPI=ON ..
+  make
+  ```
 
-    ModelTest-NG binaries will be placed in `modeltest-ng/bin` directory.
+  ModelTest-NG binaries will be placed in `modeltest-ng/bin` directory.
 
-  b) Build ModelTest-NG using `autotools`
+b) Build ModelTest-NG using `autotools`
 
-    If you have downloaded a complete distribution, check the following files exist:
-      - libpll-x.y.z.tar.gz
-      - pll-modules-x.y.z.tar.gz
-      - build.sh
+  If you have downloaded a complete distribution, check the following files exist:
+    - libpll-x.y.z.tar.gz
+    - pll-modules-x.y.z.tar.gz
+    - build.sh
 
-    Run the installer script:
+  Run the installer script:
 
-    ```bash
-    $ build.sh
-    ```
+  ```bash
+  $ build.sh
+  ```
 
-    This should extract and compile the required libraries and link them statically
-    in the ModelTest-NG binaries for console (modeltest-ng, modeltest-mpi) and GUI (modeltest-gui) if
-    a valid `qmake` is available.
+  This should extract and compile the required libraries and link them statically
+  in the ModelTest-NG binaries for console (modeltest-ng, modeltest-mpi) and GUI (modeltest-gui) if
+  a valid `qmake` is available.
 
-    Note that, qmake might be available in some linux distributions,
-    but NOT a functional QT framework.
-    Try running `qmake`, and if you observe and error,
-    install `qt5-default` from apt repositories:
+  Note that, qmake might be available in some linux distributions,
+  but NOT a functional QT framework.
+  Try running `qmake`, and if you observe and error,
+  install `qt5-default` from apt repositories:
 
-    ```bash
-    $ sudo apt-get install qt5-default
-    ```
+  ```bash
+  $ sudo apt-get install qt5-default
+  ```
 
-    The resulting binaries and libraries will be placed in `build/bin` and `build/lib` directories
+  The resulting binaries and libraries will be placed in `build/bin` and `build/lib` directories
 
 1. Graphical User Interface
 
-  To install ModelTest-NG GUI type the following commands:
+To install ModelTest-NG GUI type the following commands:
 
-  ```bash
-  $ ./build_qmake-sh
-  $ make -f Makefile.qmake
-  $ make install -f Makefile.qmake
-  ```
+```bash
+$ ./build_qmake-sh
+$ make -f Makefile.qmake
+$ make install -f Makefile.qmake
+```
 
-  Run 'modeltest-gui' without arguments for loading the GUI
+Run 'modeltest-gui' without arguments for loading the GUI
 
 2. Command Console Interface
 
-  To install ModelTest-NG type the following commands:
+To install ModelTest-NG type the following commands:
 
-  ```bash
-  $ ./configure [--prefix=INSTALL_DIR]
-  $ make
-  $ make install
-  ```
+```bash
+$ ./configure [--prefix=INSTALL_DIR]
+$ make
+$ make install
+```
 
 Set a custom install directory if you don't have root access or you prefer a
 different location.
 
 This will compile pthreads and MPI versions
 Run 'modeltest-ng --help' for help about the console interface.
+
+## Windows installation 
 
 To compile a Windows executable, install MinGW and run:
 
